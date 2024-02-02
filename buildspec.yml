@@ -12,7 +12,6 @@ phases:
     commands:
       - echo Packaging JAR file...
       - java -version
-      - nvm use 17.9.1
       - yarn run build
       - mvn clean package -Pprod
   post_build:
