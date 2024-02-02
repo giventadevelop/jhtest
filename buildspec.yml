@@ -7,7 +7,7 @@ phases:
     commands:
       - echo Packaging JAR file...
       - java -version
-      - mvn clean package
+      - mvn clean package -Pprod
   post_build:
     commands:
       - echo Build complete.
