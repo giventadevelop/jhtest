@@ -3,11 +3,9 @@ phases:
   install:
     runtime-versions:
       java: corretto17
-      nodejs: 17
+      nodejs: 18
   pre_build:
     commands:
-      - nvm install 17.9.1 # Rolling back to Node.js v17.9.1
-      - nvm use 17.9.1
       - npm install -g yarn # Still gotta have my yarn!
       - yarn install --ignore-engines # This is the game-changer
   build:
