@@ -1040,6 +1040,7 @@
                         <artifactId>git-commit-id-maven-plugin</artifactId>
                     </plugin>
                 </plugins>
+                <finalName>jhiptest</finalName>
             </build>
             <dependencies>
                 <dependency>

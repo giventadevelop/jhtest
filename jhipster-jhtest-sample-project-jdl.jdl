@@ -1,0 +1,61 @@
+application {
+  config {
+    applicationType monolith
+    authenticationType jwt
+    baseName jhtest
+    buildTool maven
+    cacheProvider ehcache
+    clientFramework angular
+    clientTheme none
+    creationTimestamp 1706713834486
+    databaseType sql
+    devDatabaseType h2Disk
+    enableHibernateCache true
+    enableSwaggerCodegen false
+    enableTranslation true
+    jhipsterVersion "8.0.0"
+    jwtSecretKey "NmM3YTJjYjJiMWUwMDQ2M2ZhMWMyNTMyMDY1YWNmMDgxZjgxMDBlZDBmM2Y2YzMxZjM2MjU2ZDU2Y2Q4ZjRjNDY4MWZiZTk4ZjQxNDkxMzFlNDM5NDg4N2QxNjAzZDEzNTFiYjFiMTU3MGQzMmYxMjRkY2IzNDEzMjI2MWZhM2E="
+    languages [en, fr]
+    messageBroker false
+    microfrontends []
+    nativeLanguage en
+    packageName com.mycompany.myapp
+    prodDatabaseType mysql
+    reactive false
+    searchEngine false
+    serviceDiscoveryType false
+    testFrameworks []
+    websocket false
+    withAdminUi true
+  }
+
+  entities Product, ProductCategory
+}
+
+/**
+ * Product sold by the Online store
+ */
+entity Product {
+  name String required
+  description String
+  price BigDecimal required min(0)
+  size Size required
+  image ImageBlob
+}
+entity ProductCategory {
+  name String required
+  description String
+}
+enum Size {
+  S,
+  M,
+  L,
+  XL,
+  XXL
+}
+
+relationship OneToMany {
+  ProductCategory{product} to Product{productCategory(name)}
+}
+
+search Product, ProductCategory with no
