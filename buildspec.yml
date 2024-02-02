@@ -3,6 +3,7 @@ phases:
   install:
     runtime-versions:
       java: corretto17
+      nodejs: 17
   pre_build:
     commands:
       - nvm install 17.9.1 # Rolling back to Node.js v17.9.1
